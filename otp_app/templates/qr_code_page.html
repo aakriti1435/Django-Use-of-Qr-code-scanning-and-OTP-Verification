@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'validate_otp' %}" method="post">
+        {% csrf_token %}
+        <table align="center" border="2">
+            <tr>
+                <th>
+                    <img src="{% static 'qrimages/aakriti.jpg' %}" alt="">
+                </th>
+            </tr>
+            <tr>
+                <th align="center" height="35">
+                    <input type="password" name="otp" placeholder="Enter the OTP" required>
+                </th>
+            </tr>
+            <tr>
+                <th height="35">
+                    <button type="submit" name="button">Verify OTP</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

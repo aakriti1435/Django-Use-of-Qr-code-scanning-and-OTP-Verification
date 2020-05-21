@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'validate_login' %}" method="POST">
+        {% csrf_token %}
+        <table align="center" border="2">
+            <tr>
+                <th width="250" height="40">OUR LOGIN PAGE</th>
+            </tr>
+            <tr>
+                <th width="250" height="40">
+                    <input type="text" placeholder="Username" name="username" required>
+                </th>
+            </tr>
+            <tr>
+                <th width="250" height="40">
+                    <input type="password" placeholder="Password" name="password" required>
+                </th>
+            </tr>
+            <tr>
+                <th width="250" height="40" border="0">
+                    <button type="submit">LOGIN</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+
+    {% if message %}
+        <h1 align='center'>{{ message }}</h1>
+    {% endif %}
+
+</body>
+</html>
